@@ -1,54 +1,54 @@
 <template>
   <div>
     <div class="weui_grids" style="background-color: #FFFFFF">
-      <a href="#" class="weui_grid">
+      <router-link to="/tech" class="weui_grid">
         <div class="weui_grid_icon">
           <i class="icon icon_button"></i>
         </div>
         <p class="weui_grid_label">
           Button
         </p>
-      </a>
-      <a href="#" class="weui_grid">
+      </router-link>
+      <router-link to="/tech" class="weui_grid">
         <div class="weui_grid_icon">
           <i class="icon icon_cell"></i>
         </div>
         <p class="weui_grid_label">
           Cell
         </p>
-      </a>
-      <a href="#" class="weui_grid">
+      </router-link>
+      <router-link to="/tech" class="weui_grid">
         <div class="weui_grid_icon">
           <i class="icon icon_toast"></i>
         </div>
         <p class="weui_grid_label">
           Toast
         </p>
-      </a>
-      <a href="#" class="weui_grid">
+      </router-link>
+      <router-link to="/tech" class="weui_grid">
         <div class="weui_grid_icon">
           <i class="icon icon_button"></i>
         </div>
         <p class="weui_grid_label">
           Button
         </p>
-      </a>
-      <a href="#" class="weui_grid">
+      </router-link>
+      <router-link to="/tech" class="weui_grid">
         <div class="weui_grid_icon">
           <i class="icon icon_cell"></i>
         </div>
         <p class="weui_grid_label">
           Cell
         </p>
-      </a>
-      <a href="#" class="weui_grid">
+      </router-link>
+      <router-link to="/tech" class="weui_grid">
         <div class="weui_grid_icon">
           <i class="icon icon_toast"></i>
         </div>
         <p class="weui_grid_label">
           Toast
         </p>
-      </a>
+      </router-link>
     </div>
     <div class="weui_panel">
       <div class="weui_panel_hd">文字列表附来源</div>
