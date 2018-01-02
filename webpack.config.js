@@ -1,7 +1,8 @@
 var path = require('path')
 var webpack = require('webpack')
+var vuxLoader = require('vux-loader')
 
-module.exports = {
+let webpackConfig = {
   entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, './dist'),
@@ -59,6 +60,10 @@ module.exports = {
   },
   devtool: '#eval-source-map'
 }
+
+module.exports = vuxLoader.merge(webpackConfig, {
+  plugins: ['vux-ui', 'progress-bar', 'duplicate-style']
+})
 
 if (process.env.NODE_ENV === 'production') {
   module.exports.devtool = '#source-map'

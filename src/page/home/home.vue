@@ -1,73 +1,61 @@
 <template>
   <div>
-    <div class="weui_grids" style="background-color: #FFFFFF">
-      <router-link to="/tech" class="weui_grid">
-        <div class="weui_grid_icon">
-          <i class="icon icon_button"></i>
-        </div>
-        <p class="weui_grid_label">
-          Button
-        </p>
-      </router-link>
-      <router-link to="/tech" class="weui_grid">
-        <div class="weui_grid_icon">
-          <i class="icon icon_cell"></i>
-        </div>
-        <p class="weui_grid_label">
-          Cell
-        </p>
-      </router-link>
-      <router-link to="/tech" class="weui_grid">
-        <div class="weui_grid_icon">
-          <i class="icon icon_toast"></i>
-        </div>
-        <p class="weui_grid_label">
-          Toast
-        </p>
-      </router-link>
-      <router-link to="/tech" class="weui_grid">
-        <div class="weui_grid_icon">
-          <i class="icon icon_button"></i>
-        </div>
-        <p class="weui_grid_label">
-          Button
-        </p>
-      </router-link>
-      <router-link to="/tech" class="weui_grid">
-        <div class="weui_grid_icon">
-          <i class="icon icon_cell"></i>
-        </div>
-        <p class="weui_grid_label">
-          Cell
-        </p>
-      </router-link>
-      <router-link to="/tech" class="weui_grid">
-        <div class="weui_grid_icon">
-          <i class="icon icon_toast"></i>
-        </div>
-        <p class="weui_grid_label">
-          Toast
-        </p>
-      </router-link>
+    <div style="background-color: #FFFFFF">
+      <grid :cols="4">
+        <grid-item link="/tech" v-for="i in 8" :key="i">
+          <img slot="icon" src="../../assets/images/icon_nav_button.png">
+          <span slot="label">button</span>
+        </grid-item>
+      </grid>
     </div>
-    <div class="weui_panel">
-      <div class="weui_panel_hd">文字列表附来源</div>
-      <tech-list-item/>
-    </div>
+    <panel :header="header" :footer="footer" :list="list" :type="type"></panel>
   </div>
 </template>
 
 <script>
-  import techListItem from '../../components/techListItem.vue'
+  import {Grid, GridItem, GroupTitle, Panel} from 'vux'
 
   export default {
     name: 'home',
+    components: {
+      Grid,
+      GridItem,
+      GroupTitle,
+      Panel
+    },
     data () {
       return {
+        header: 'header',
+//        footer: {url: 'url', title: 'title'},
+        list: [{
+          src: 'http://placeholder.qiniudn.com/60x60/3cc51f/ffffff',
+          title: '标题一',
+          desc: '由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。',
+          url: {
+            path: '/component/radio',
+            replace: false
+          },
+          meta: {
+            source: '来源信息',
+            date: '时间',
+            other: '其他信息'
+          }
+        }, {
+          src: 'http://placeholder.qiniudn.com/60x60/3cc51f/ffffff',
+          title: '标题二',
+          desc: '由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。',
+          url: {
+            path: '/component/radio',
+            replace: false
+          },
+          meta: {
+            source: '来源信息',
+            date: '时间',
+            other: '其他信息'
+          }
+        }],
+        type: '5'
       }
-    },
-    components: {
-      techListItem
     }
   }
 </script>
