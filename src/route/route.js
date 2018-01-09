@@ -1,7 +1,8 @@
-import App from '../App.vue'
+import App from '../App'
 
-const home = r => require.ensure([], () => r(require('../page/home/home.vue')), 'home')
-const tech = r => require.ensure([], () => r(require('../page/tech/tech.vue')), 'tech')
+const home = r => require.ensure([], () => r(require('@/page/home/home')), 'home')
+const tech = r => require.ensure([], () => r(require('@/page/tech/tech')), 'tech')
+const layout = r => require.ensure([], () => r(require('@/page/layout/Layout')), 'layout')
 
 export default[{
   path: '/',
@@ -9,11 +10,17 @@ export default[{
   children: [
     {
       path: '',
-      component: home
-    },
-    {
-      path: 'tech',
-      component: tech
+      redirect: 'layout/home'
+    }, {
+      path: 'layout',
+      component: layout,
+      children: [{
+        path: 'home',
+        component: home
+      }, {
+        path: 'tech',
+        component: tech
+      }]
     }
   ]
 }]

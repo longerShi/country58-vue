@@ -44,9 +44,7 @@ let webpackConfig = {
   resolve: {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      'src': path.join(__dirname, './src'),
-      'assets': path.resolve(__dirname, './src/assets'),
-      'components': path.resolve(__dirname, './src/components')
+      '@': path.join(__dirname, './src')
     },
     extensions: ['.js', '.vue', '.less', '.css']
   },
