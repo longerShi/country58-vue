@@ -1,5 +1,5 @@
 <template>
-  <panel :header="header" :footer="footer" :list="list" :type="type"></panel>
+  <panel :header="header" :list="list" :type="type"></panel>
 </template>
 
 <script>
