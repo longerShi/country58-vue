@@ -6,7 +6,7 @@
         <img slot="icon" src="../../assets/images/icon_nav_button.png">
         <span slot="label">TECH</span>
       </tabbar-item>
-      <tabbar-item link="/layout/tech">
+      <tabbar-item link="/layout/profile">
         <img slot="icon" src="../../assets/images/icon_nav_button.png">
         <span slot="label">ME</span>
       </tabbar-item>
