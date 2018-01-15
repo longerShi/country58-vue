@@ -2,11 +2,11 @@
   <div>
     <router-view></router-view>
     <tabbar>
-      <tabbar-item link="/layout/home">
+      <tabbar-item link="/home">
         <img slot="icon" src="../../assets/images/icon_nav_button.png">
         <span slot="label">TECH</span>
       </tabbar-item>
-      <tabbar-item link="/layout/profile">
+      <tabbar-item link="/profile">
         <img slot="icon" src="../../assets/images/icon_nav_button.png">
         <span slot="label">ME</span>
       </tabbar-item>

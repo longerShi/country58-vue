@@ -8,7 +8,7 @@
         </grid-item>
       </grid>
     </div>
-    <panel  v-if="list" :header="header" :list="list" :type="type"></panel>
+    <panel :header="header" :list="techList" :type="type"></panel>
   </div>
 </template>
 
@@ -27,7 +27,7 @@
     data () {
       return {
         header: 'tech list',
-        list: [],
+        techList: [],
         type: '5'
       }
     },
@@ -38,12 +38,12 @@
         function(value) {
           console.log(value)
           value.techUsers.forEach(function(data) {
-            self.list.push({
+            self.techList.push({
               src: data.headImg,
               title: data.techName,
               desc: data.address,
               url: {
-                path: '/component/radio',
+                path: '/tech/'+data.id,
                 replace: false
               },
               meta: {

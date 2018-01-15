@@ -37,5 +37,9 @@ export function getRequest(url, params) {
 export default {
   getTechList() {
     return getRequest('/users/techs', {});
+  },
+
+  getTechUser(techUserId) {
+    return getRequest('/users/techs/'+techUserId, {});
   }
 };
