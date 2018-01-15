@@ -5,7 +5,7 @@ axios.defaults.headers.post['Content-Type'] = 'application/json;charset=UTF-8';
 axios.defaults.baseURL = 'http://localhost:8081/';
 
 
-function postRequest(url, params) {
+export function postRequest(url, params) {
   return new Promise((resolve, reject) => {
     axios.post(url, params)
       .then(response => {
@@ -36,6 +36,6 @@ export function getRequest(url, params) {
 
 export default {
   getTechList() {
-    return getRequest('/techs', {});
+    return getRequest('/users/techs', {});
   }
 };

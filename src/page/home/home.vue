@@ -37,7 +37,7 @@
       Api.getTechList().then(
         function(value) {
           console.log(value)
-          value.techs.forEach(function(data) {
+          value.techUsers.forEach(function(data) {
             self.list.push({
               src: data.headImg,
               title: data.techName,
