@@ -1,7 +1,7 @@
 <template>
   <div>
     <router-view></router-view>
-    <tabbar>
+    <tabbar :style="position">
       <tabbar-item link="/home">
         <img slot="icon" src="../../assets/images/icon_nav_button.png">
         <span slot="label">TECH</span>
@@ -20,6 +20,11 @@
     name: "layout",
     components: {
       Tabbar, TabbarItem
+    },
+    data() {
+      return {
+        position: "position: fixed"
+      }
     }
   }
 </script>
