@@ -7,6 +7,9 @@ const userInfo = r => require.ensure([], () => r(require('@/page/profile/userinf
 
 const techDetail = r => require.ensure([], () => r(require('@/page/tech/TechDetail')), 'techDetail')
 
+const signUp = r => require.ensure([], () => r(require('@/page/user/Signup')), 'signUp')
+const login =  r => require.ensure([], () => r(require('@/page/user/Login')), 'login')
+
 export default[{
   path: '/',
   component: App,
@@ -29,6 +32,12 @@ export default[{
     }, {
       path: 'tech/:id',
       component: techDetail
+    }, {
+      path: 'signup',
+      component: signUp
+    }, {
+      path: 'login',
+      component: login
     }
   ]
 }]
