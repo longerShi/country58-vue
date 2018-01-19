@@ -18,7 +18,7 @@
 
 <script>
   import {Grid, GridItem, GroupTitle, Panel, LoadMore} from 'vux'
-  import Api from '../server/api'
+  import Api from '@/server/api'
 
   export default {
     name: 'home',

@@ -20,7 +20,7 @@
 
 <script>
   import { XHeader, Panel, Group, Cell, Rater } from "vux";
-  import Api from '../server/api'
+  import Api from '../../server/api'
 
   export default {
     components: {

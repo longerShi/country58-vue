@@ -41,5 +41,10 @@ export default {
 
   getTechUser(techUserId) {
     return getRequest('/users/techs/'+techUserId, {});
+  },
+
+  login(userName, password) {
+    // return getRequest('users/login?userName='+userName+'&password='+password);
+    return getRequest('users/login', {'userName': userName, 'password': password});
   }
 };

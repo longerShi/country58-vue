@@ -9,7 +9,7 @@
       <x-input title="密码" type="password" placeholder="" :min="6" ></x-input>
       <x-input title="确认密码" type="password" placeholder=""></x-input>
     </group>
-    <x-button type="primary" plain class="sign-up">注册</x-button>
+    <x-button type="primary" plain class="sign-up" action-type="button">注册</x-button>
   </div>
 </template>
 
