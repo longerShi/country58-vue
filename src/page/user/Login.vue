@@ -13,6 +13,8 @@
   import { XHeader, Group, XInput, XButton } from "vux";
   import Api from '@/server/api';
   import { toast } from '@/server/utils';
+  import {mapState, mapMutations} from 'vuex'
+
 
   export default {
     name: "login",
@@ -26,25 +28,25 @@
       }
     },
     methods: {
-      login: function () {
-        var self = this;
+      ...mapMutations([
+        'SET_USER_INFO'
+      ]),
+
+      async login() {
         if (this.phone == '' || this.password == '') {
           toast(this, 'warn', '手机号/密码不能为空！');
           return;
         }
-        Api.login(this.phone, this.password).then(
-          function (value) {
-            if (value.user) {
-              self.$router.push({
-                path: 'home'
-              });
-            } else {
-              toast(self, 'warn', '手机号/密码错误！');
-            }
-          },function (error) {
-            console.log(error);
-          }
-        )
+        let value = await Api.login(this.phone, this.password)
+        if (value.user) {
+          this.SET_USER_INFO(value.user);
+          this.$router.push({
+            path: 'home'
+          });
+          // this.$router.go(-1); //登陆成功之后返回上一页
+        } else {
+          toast(this, 'warn', '手机号/密码错误！');
+        }
       }
     }
   }
