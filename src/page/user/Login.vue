@@ -27,9 +27,17 @@
         password: ''
       }
     },
+    computed: {
+      ...mapState([
+        'isLogin'
+      ])
+    },
+    created() {
+      this.isLogin ? this.$router.go(-1) : ''
+    },
     methods: {
       ...mapMutations([
-        'SET_USER_INFO'
+        'SET_USER_INFO', 'SET_LOGIN_STATUS'
       ]),
 
       async login() {
@@ -40,10 +48,8 @@
         let value = await Api.login(this.phone, this.password)
         if (value.user) {
           this.SET_USER_INFO(value.user);
-          this.$router.push({
-            path: 'home'
-          });
-          // this.$router.go(-1); //登陆成功之后返回上一页
+          this.SET_LOGIN_STATUS(true);
+          this.$router.go(-1);
         } else {
           toast(this, 'warn', '手机号/密码错误！');
         }

@@ -27,11 +27,21 @@
 
 <script>
   import { CellBox,Group } from 'vux'
+  import {mapState} from 'vuex'
+
   export default {
+    name: "profile",
     components: {
       Group, CellBox
     },
-    name: "profile"
+    computed: {
+      ...mapState([
+        'isLogin'
+      ])
+    },
+    created() {
+      this.isLogin ? '' : this.$router.replace('/login')
+    }
   }
 </script>
 
