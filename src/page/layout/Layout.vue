@@ -1,6 +1,8 @@
 <template>
   <div>
-    <router-view></router-view>
+    <transition name="router-fade" mode="out-in">
+      <router-view></router-view>
+    </transition>
     <tabbar :style="position">
       <tabbar-item link="/home">
         <img slot="icon" src="../../assets/images/icon_nav_button.png">
@@ -30,5 +32,12 @@
 </script>
 
 <style scoped>
+
+  .router-fade-enter-active, .router-fade-leave-active {
+    transition: opacity .2s;
+  }
+  .router-fade-enter, .router-fade-leave-active {
+    opacity: 0;
+  }
 
 </style>
