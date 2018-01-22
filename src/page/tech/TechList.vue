@@ -27,6 +27,10 @@
     <checklist class="order-checklist" v-if="showOrderByTechType" title="" :options="orderTechTypeOptions" v-model="orderTechType" :max="1" @on-change="change"></checklist>
 
     <panel :list="techList" type="5"></panel>
+
+    <transition name="router-slid" mode="out-in">
+      <router-view></router-view>
+    </transition>
   </div>
 </template>
 
@@ -71,7 +75,7 @@
                 title: data.techName,
                 desc: data.address,
                 url: {
-                  path: '/tech/'+data.id,
+                  path: '/techs/'+data.id,
                   replace: false
                 },
                 meta: {
@@ -99,5 +103,14 @@
     width: 100%;
     height: 90%;
   }
+
+  .router-slid-enter-active, .router-slid-leave-active {
+    transition: all .4s;
+  }
+  .router-slid-enter, .router-slid-leave-active {
+    transform: translate3d(2rem, 0, 0);
+    opacity: 0;
+  }
+
 
 </style>

@@ -31,9 +31,6 @@ export default[{
         }]
       }]
     }, {
-      path: 'tech/:id',
-      component: techDetail
-    }, {
       path: 'signup',
       component: signUp
     }, {
@@ -41,7 +38,11 @@ export default[{
       component: login
     }, {
       path: 'techs',
-      component: techList
+      component: techList,
+      children: [{
+        path: ':id',
+        component: techDetail
+      }]
     }
   ]
 }]

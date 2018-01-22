@@ -12,6 +12,7 @@
     <div @click="loadMoreTechUsers()">
       <load-more :show-loading="showLoading" :tip="loadMoreTip"></load-more>
     </div>
+
   </div>
 </template>
 
@@ -58,7 +59,7 @@
                 title: data.techName,
                 desc: data.address,
                 url: {
-                  path: '/tech/'+data.id,
+                  path: '/techs/'+data.id,
                   replace: false
                 },
                 meta: {

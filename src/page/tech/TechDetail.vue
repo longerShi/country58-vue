@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="rating-page">
     <x-header>技工信息</x-header>
     <div class="profile-header">
       <div class="head-img-link">
@@ -59,6 +59,14 @@
 </script>
 
 <style scoped>
+  .rating-page {
+    width: 100%;
+    position: absolute;
+    z-index: 222;
+    height: 100%;
+    top: 0px;
+    background: white;
+  }
   .profile-header {
     text-align: center;
   }
