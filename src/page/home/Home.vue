@@ -2,7 +2,7 @@
   <div>
     <div style="background-color: #FFFFFF">
       <grid :cols="4">
-        <grid-item link="/tech" v-for="i in 8" :key="i">
+        <grid-item link="/techs" v-for="i in 8" :key="i">
           <img slot="icon" src="../../assets/images/icon_nav_button.png">
           <span slot="label">button</span>
         </grid-item>
@@ -12,7 +12,6 @@
     <div @click="loadMoreTechUsers()">
       <load-more :show-loading="showLoading" :tip="loadMoreTip"></load-more>
     </div>
-
   </div>
 </template>
 

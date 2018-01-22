@@ -5,6 +5,7 @@ const layout = r => require.ensure([], () => r(require('@/page/layout/Layout')),
 const profile = r => require.ensure([], () => r(require('@/page/profile/Profile')), 'profile')
 const userInfo = r => require.ensure([], () => r(require('@/page/profile/userinfo/Userinfo')), 'userInfo')
 
+const techList = r => require.ensure([], () => r(require('@/page/tech/TechList')), 'techList')
 const techDetail = r => require.ensure([], () => r(require('@/page/tech/TechDetail')), 'techDetail')
 
 const signUp = r => require.ensure([], () => r(require('@/page/user/Signup')), 'signUp')
@@ -38,6 +39,9 @@ export default[{
     }, {
       path: 'login',
       component: login
+    }, {
+      path: 'techs',
+      component: techList
     }
   ]
 }]
